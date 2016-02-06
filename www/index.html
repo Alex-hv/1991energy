@@ -13,53 +13,34 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script>
 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 function initMap() {
 
 
   var myLatLng = {lat: 50.456, lng: 30.470};
 
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
     center: myLatLng
   });
-var locations = [
-      ['Company 1', 50.456, 30.470, 4],
-      ['Company 2', 50.442, 30.472, 5],
-      ['Company 3', 50.415, 30.509, 3],
-      ['Company 4', 50.419, 30.547, 2],
-	  ['Company 6', 50.426, 30.470, 6],
-      ['Company 7', 50.442, 30.452, 7],
-      ['Company 8', 50.435, 30.519, 8],
-      ['Company 9', 50.413, 30.557, 9],
-      ['Company 10', 50.432, 30.505, 10],
-	  ['Company 12', 50.426, 30.480, 12],
-      ['Company 13', 50.442, 30.482, 13],
-      ['Company 15', 50.413, 30.457, 15],
-    ];
-	
-	var infowindow = new google.maps.InfoWindow();
-
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
-
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
+  
+  google.maps.event.addListener(map, 'click', function(event) {
+  placeMarker(event.latLng);
+  $("#first").parent().next().show();
+});
+  
 }
-
+var map;
 var customerMarker
-
+var circle;
+    var markers=[];
 function placeMarker(location) {
   if ( customerMarker ) {
     customerMarker.setPosition(location);
+	
   } else {
     var image = 'img/beachflag.png';
   customerMarker = new google.maps.Marker({
@@ -68,19 +49,48 @@ function placeMarker(location) {
     icon: image,
 	draggable: true
   });
-  
   }
+  if (circle)
+  {
+  circle.setCenter(location);
+  }
+  else
+  {
+  circle = new google.maps.Circle({
+      strokeColor: '#0087FF',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#0087FF',
+      fillOpacity: 0.35,
+      map: map,
+	  center:location,
+      radius: 3000
+    });
+  }
+
+
+
+ if(markers.length==0)
+ {
+		for (var i = 0; i < 10; i++) {  
+		  markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(location.lat()+getRandomArbitrary(-0.02,0.02), location.lng()+getRandomArbitrary(-0.02,0.02)),
+			map: map
+		  })
+		  );
+		}
+		
+	}
+	else 
+	{
+	markers.forEach(function(item, i, arr) {
+	item.setPosition( new google.maps.LatLng( location.lat()+getRandomArbitrary(-0.02,0.02), location.lng()+getRandomArbitrary(-0.02,0.02) ) );
+	  });
+	}
+
+
 }
 
-
-
-google.maps.event.addListener(map, 'click', function(event) {
-  placeMarker(event.latLng);
-  $("#first").parent().next().show(200);
-
-});
-
-}
 
     </script>
     <script async defer
