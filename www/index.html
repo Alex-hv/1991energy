@@ -1,0 +1,151 @@
+<html>
+
+<head>
+
+<link  rel="stylesheet" href="css/bootstrap.css"/>
+<link  rel="stylesheet" href="css/style.css"/>
+<link  rel="stylesheet" href="css/custom.css"/>
+
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+
+<meta charset="utf-8">
+<style>
+      html, body {
+        height: 96%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script>
+
+function initMap() {
+  var myLatLng = {lat: 50.456, lng: 30.470};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: myLatLng
+  });
+var locations = [
+      ['Company 1', 50.456, 30.470, 4],
+      ['Company 2', 50.442, 30.472, 5],
+      ['Company 3', 50.415, 30.509, 3],
+      ['Company 4', 50.419, 30.547, 2],
+	  ['Company 6', 50.426, 30.470, 6],
+      ['Company 7', 50.442, 30.452, 7],
+      ['Company 8', 50.435, 30.519, 8],
+      ['Company 9', 50.413, 30.557, 9],
+      ['Company 10', 50.432, 30.505, 10],
+	  ['Company 12', 50.426, 30.480, 12],
+      ['Company 13', 50.442, 30.482, 13],
+      ['Company 15', 50.413, 30.457, 15],
+    ];
+	
+	var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+}
+
+var image = 'img/beachflag.png';
+  var customerMarker = new google.maps.Marker({
+    position: {lat: 50.442, lng: 30.555},
+    map: map,
+    icon: image,
+	draggable: true
+  });
+
+  google.maps.event.addListener(customerMarker, 'dragend', function (evt) {
+    $('.sidebar').show(400)
+});
+}
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhXAD3qq9Wa0SeNnBwcuEv9_ISet-iOkk&signed_in=true&callback=initMap"></script>
+		
+
+</head>
+
+
+
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Energy</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Главная</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Поиск по индексу">
+        </div>
+        <a href="search.html" class="btn btn-default">Искать</a>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="sidebar">
+<div class="panel panel-default panel-sidebar">
+  <div class="panel-body">
+    Компания
+  </div>
+</div>
+<div class="panel panel-default panel-sidebar">
+  <div class="panel-body">
+    Компания2
+  </div>
+</div>
+<div class="panel panel-default panel-sidebar">
+  <div class="panel-body">
+    Компания3
+  </div>
+</div>
+<div class="panel panel-default panel-sidebar">
+  <div class="panel-body">
+    Компания4
+  </div>
+</div>
+<div class="panel panel-default panel-sidebar panel-sidebar-showAll">
+  <div class="panel-body">
+    Показать все
+  </div>
+</div>
+
+</div>
+
+<div id="map">
+</div>
+
+</body>
+
+</html>
