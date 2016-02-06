@@ -62,17 +62,28 @@ var locations = [
       })(marker, i));
 }
 
-var image = 'img/beachflag.png';
-  var customerMarker = new google.maps.Marker({
-    position: {lat: 50.442, lng: 30.555},
+var customerMarker
+
+function placeMarker(location) {
+  if ( customerMarker ) {
+    customerMarker.setPosition(location);
+  } else {
+    var image = 'img/beachflag.png';
+  customerMarker = new google.maps.Marker({
+    position: location,
     map: map,
     icon: image,
 	draggable: true
   });
+  
+  }
+}
 
-  google.maps.event.addListener(customerMarker, 'dragend', function (evt) {
-    $('.sidebar').show(400)
+google.maps.event.addListener(map, 'click', function(event) {
+  placeMarker(event.latLng);
+  $('.sidebar').show(400);
 });
+
 }
 
     </script>
