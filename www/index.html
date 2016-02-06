@@ -9,20 +9,13 @@
 <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
 
 <meta charset="utf-8">
-<style>
-      html, body {
-        height: 96%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
+
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script>
 
 function initMap() {
+
+
   var myLatLng = {lat: 50.456, lng: 30.470};
 
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -71,13 +64,35 @@ var image = 'img/beachflag.png';
   });
 
   google.maps.event.addListener(customerMarker, 'dragend', function (evt) {
-    $('.sidebar').show(400)
+    $("#first").parent().next().show();
 });
 }
 
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhXAD3qq9Wa0SeNnBwcuEv9_ISet-iOkk&signed_in=true&callback=initMap"></script>
+		
+<script>
+
+$(function(){
+
+$("#second").click(function() {
+  $(this).parent().parent().next().show();
+});
+$("#third").click(function() {
+  $(this).parent().parent().next().show();
+});
+$("#fourth").click(function() {
+  $(this).parent().parent().next().show();
+});
+
+});
+
+function ShowNext() {
+  $(this).parent().parent().next().show();
+}
+
+</script>	
 		
 
 </head>
@@ -116,28 +131,32 @@ var image = 'img/beachflag.png';
 
 <div class="sidebar">
 <div class="panel panel-default panel-sidebar">
-  <div class="panel-body">
-    Компания
+  <div class="panel-body" id="first">
+    Переместите флажок на Ваше местоположение
   </div>
 </div>
-<div class="panel panel-default panel-sidebar">
+<div class="panel panel-default panel-sidebar" style="display:none;">
   <div class="panel-body">
-    Компания2
+    Сколько кВт/ч Вы планируете потреблять?<br>
+	<button class="btn btn-default float-right btn-sidebar" id="second" style="width:30%;">Дальше</button>
+	<input type="text" class="form-control float-left btn-sidebar" style="width:65%;" placeholder="Столько">
   </div>
 </div>
-<div class="panel panel-default panel-sidebar">
+<div class="panel panel-default panel-sidebar" style="display:none;">
   <div class="panel-body">
-    Компания3
+    Какой тип договора Вас интересует?
+	<button class="btn btn-default float-right btn-sidebar" id="third" >Дальше</button>
   </div>
 </div>
-<div class="panel panel-default panel-sidebar">
+<div class="panel panel-default panel-sidebar" style="display:none;">
   <div class="panel-body">
-    Компания4
+    Вопрос 4
+	<button class="btn btn-default float-right btn-sidebar" id="fourth" >Дальше</button>
   </div>
 </div>
-<div class="panel panel-default panel-sidebar panel-sidebar-showAll">
+<div class="panel panel-default panel-sidebar " style="display:none;">
   <div class="panel-body">
-    Показать все
+    <a href="search.html"> Просмотреть результат </a>
   </div>
 </div>
 

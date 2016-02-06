@@ -1,6 +1,8 @@
-.map{
+#map{
 margin:auto;
-width:68%;
+width:81.1%;
+float:right;
+height: 93.6%;
 }
 
 .param{
@@ -30,12 +32,24 @@ width:68%;
     top: 50px;
     bottom: 0;
     z-index: 1;
-    width: 302px;
+    width: 18.9%;
     background: #fff;
-	display:none;
+
+}
+
+.btn-sidebar{
+	 margin-top:5px;
 }
 
 .panel-sidebar{
 	margin:10px;
 	margin-top:15px;
+}
+
+.float-right{
+	float:right;
+}
+
+.float-left{
+	float:left;
 }
