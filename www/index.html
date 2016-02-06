@@ -72,14 +72,10 @@ function placeMarker(location) {
   }
 }
 
-<<<<<<< HEAD
-  google.maps.event.addListener(customerMarker, 'dragend', function (evt) {
-    $("#first").parent().next().show();
-=======
 google.maps.event.addListener(map, 'click', function(event) {
   placeMarker(event.latLng);
-  $('.sidebar').show(400);
->>>>>>> origin/master
+  $("#first").parent().next().show();
+
 });
 
 }
