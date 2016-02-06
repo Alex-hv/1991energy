@@ -69,10 +69,9 @@ function placeMarker(location) {
   }
 
 
-
  if(markers.length==0)
  {
-		for (var i = 0; i < 10; i++) {  
+		for (var i = 0; i < 5; i++) {  
 		  markers.push(new google.maps.Marker({
 			position: new google.maps.LatLng(location.lat()+getRandomArbitrary(-0.02,0.02), location.lng()+getRandomArbitrary(-0.02,0.02)),
 			map: map
@@ -88,7 +87,6 @@ function placeMarker(location) {
 	  });
 	}
 
-
 }
 
 
@@ -101,19 +99,19 @@ function placeMarker(location) {
 $(function(){
 
 $("#second").click(function() {
-  $(this).parent().parent().next().show(200);
+  $(this).parent().parent().next().show();
 });
 $("#third").click(function() {
-  $(this).parent().parent().next().show(200);
+  $(this).parent().parent().next().show();
 });
 $("#fourth").click(function() {
-  $(this).parent().parent().next().show(200);
+  $(this).parent().parent().next().show();
 });
 
 });
 
 function ShowNext() {
-  $(this).parent().parent().next().show(200);
+  $(this).parent().parent().next().show();
 }
 
 </script>	
@@ -144,7 +142,7 @@ function ShowNext() {
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Введите Ваш индекс">
+          <input type="text" class="form-control" placeholder="Поиск по индексу">
         </div>
         <a href="search.html" class="btn btn-default">Искать</a>
       </form>
@@ -156,57 +154,31 @@ function ShowNext() {
 <div class="sidebar">
 <div class="panel panel-default panel-sidebar">
   <div class="panel-body" id="first">
-    Нажмите на Ваше местоположение
+    Переместите флажок на Ваше местоположение
   </div>
 </div>
 <div class="panel panel-default panel-sidebar" style="display:none;">
   <div class="panel-body">
     Сколько кВт/ч Вы планируете потреблять?<br>
 	<button class="btn btn-default float-right btn-sidebar" id="second" style="width:30%;">Дальше</button>
-	<select class="form-control btn-sidebar float-left" style="width:65%;">
-	  <option>До 500</option>
-	  <option>500-1000</option>
-	  <option>1000-2000</option>
-	  <option>Более 2000</option>
-	</select>
+	<input type="text" class="form-control float-left btn-sidebar" style="width:65%;" placeholder="Столько">
   </div>
 </div>
 <div class="panel panel-default panel-sidebar" style="display:none;">
   <div class="panel-body">
     Какой тип договора Вас интересует?
-	<div class="radio" style="width:65%">
-	  <label>
-		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-		Любой
-	  </label><br>
-	  <label>
-		<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-		Фиксированный
-	  </label><br>
-	  <label>
-		<input type="radio" name="optionsRadios" id="optionsRadios2" value="option3">
-		Гибкий
-	  </label>
-	</div>
-	<button class="btn btn-default float-right btn-sidebar" id="third" style="margin-top:-34px;" >Дальше</button>
+	<button class="btn btn-default float-right btn-sidebar" id="third" >Дальше</button>
   </div>
 </div>
 <div class="panel panel-default panel-sidebar" style="display:none;">
   <div class="panel-body">
-    На какой срок Вы хотите заключить договор?<br>
-	<button class="btn btn-default float-right btn-sidebar" id="fourth" style="width:30%;">Дальше</button>
-	<select class="form-control btn-sidebar float-left" style="width:65%;">
-	  <option>1 месяц</option>
-	  <option>3 месяца</option>
-	  <option>6 месяцев</option>
-	  <option>1 год</option>
-	  <option>2 года</option>
-	</select>
+    Вопрос 4
+	<button class="btn btn-default float-right btn-sidebar" id="fourth" >Дальше</button>
   </div>
 </div>
 <div class="panel panel-default panel-sidebar " style="display:none;">
-  <div class="panel-body" style="text-align:center">
-    <button class="btn btn-default" onclick="window.location.href='search.html'">Просмотреть результаты</button>
+  <div class="panel-body">
+    <a href="search.html"> Просмотреть результат </a>
   </div>
 </div>
 
