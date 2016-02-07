@@ -34,6 +34,7 @@ height: 93.6%;
     z-index: 1;
     width: 18.9%;
     background: #fff;
+    box-shadow: 1px 1px 5px grey;
 
 }
 
@@ -44,6 +45,7 @@ height: 93.6%;
 .panel-sidebar{
 	margin:10px;
 	margin-top:15px;
+	box-shadow: 1px 1px 5px grey;
 }
 
 .float-right{
@@ -56,7 +58,8 @@ height: 93.6%;
 
 
 #energy{ 
-color:#303f9f; 
+color:#303f9f;
+font-size: 20px; 
 } 
 body{ 
 background-color: #a4c2d9; 
@@ -66,9 +69,14 @@ background-image: linear-gradient(transparent 10%,#d2e1ec 80%);
 #house-on-hills{ 
 
 margin-top: -120px; 
-margin-left:10%;
-margin-right:10%;
+margin-left:3%;
+margin-right:3%;
 position: fixed; 
 bottom: 0; 
 z-index:-5; 
+}
+.navbar{
+	background-color: #fff; 
+background-image: -webkit-linear-gradient(transparent 10%, #eaeaea 80%);
+box-shadow: 2px 2px 5px grey;
 }
