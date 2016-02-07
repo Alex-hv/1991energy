@@ -14,14 +14,250 @@
 
 <body>
 <script>
+
+var	jsonStation = 
+			'				\
+			{				\
+				"company_1" :{				\
+					"name":"Название компании",	\
+					"rating":2,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{				\
+							"name": "Недорого",	\
+							"id": "cheep"		\
+							},			\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}					\
+					],						\
+					"status": "n_published",\
+					"contacts": "Контакты",	\
+					"price": "550",		\
+					"logo": 0				\
+					},						\
+				"company_2" :{				\
+					"name":"Название компании",	\
+					"rating":5,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{				\
+							"name": "Недорого",	\
+							"id": "cheep"		\
+							}				\
+					],						\
+					"status": "n_published",\
+					"contacts": "Контакты",	\
+					"price": "830",		\
+					"logo": 0				\
+					},						\
+				"company_3" :{				\
+					"name":"Название компании",	\
+					"rating":4,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}				\
+					],						\
+					"status": "n_published",\
+					"contacts":"Контакты",	\
+					"price": "785",		\
+					"logo": 0				\
+					},						\
+				"company_4" :{				\
+					"name":"Название компании",	\
+					"rating":4,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{				\
+							"name": "Недорого",	\
+							"id": "cheep"		\
+							},			\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}					\
+					],						\
+					"status": "n_published",\
+					"contacts": "Контакты",	\
+					"price": "755",		\
+					"logo": 0				\
+					},						\
+				"company_5" :{				\
+					"name":"Название компании",	\
+					"rating":2,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}				\
+					],						\
+					"status": "n_published",\
+					"contacts":"Контакты",	\
+					"price": "620",		\
+					"logo": 0				\
+					},						\
+				"company_6" :{				\
+					"name":"Название компании",	\
+					"rating":5,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{				\
+							"name": "Недорого",	\
+							"id": "cheep"		\
+							},			\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}					\
+					],						\
+					"status": "n_published",\
+					"contacts": "Контакты",	\
+					"price": "790",		\
+					"logo": 0				\
+					},						\
+				"company_7" :{				\
+					"name":"Название компании",	\
+					"rating":5,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}				\
+					],						\
+					"status": "n_published",\
+					"contacts":"Контакты",	\
+					"price": "950",		\
+					"logo": 0				\
+					},						\
+				"company_8" :{				\
+					"name":"Название компании",	\
+					"rating":3,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{				\
+							"name": "Недорого",	\
+							"id": "cheep"		\
+							},			\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}					\
+					],						\
+					"status": "n_published",\
+					"contacts": "Контакты",	\
+					"price": "630",		\
+					"logo": 0				\
+					},						\
+				"company_9" :{				\
+					"name":"Название компании",	\
+					"rating":1,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}				\
+					],						\
+					"status": "n_published",\
+					"contacts":"Контакты",	\
+					"price": "520",		\
+					"logo": 0				\
+					},						\
+				"company_10" :{				\
+					"name":"Название компании",	\
+					"rating":5,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{				\
+							"name": "Недорого",	\
+							"id": "cheep"		\
+							},			\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}					\
+					],						\
+					"status": "n_published",\
+					"contacts": "Контакты",	\
+					"price": "700",		\
+					"logo": 0				\
+					},						\
+				"company_11" :{				\
+					"name":"Название компании",	\
+					"rating":5,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}				\
+					],						\
+					"status": "n_published",\
+					"contacts":"Контакты",	\
+					"price": "700",		\
+					"logo": 0				\
+					},						\
+				"company_12" :{				\
+					"name":"Название компании",	\
+					"rating":4,				\
+					"print": "TRUE",		\
+					"bags":[				\
+							{						\
+							"name": "Качественно",	\
+							"id": "disapp2"		\
+							}				\
+					],						\
+					"status": "n_published",\
+					"contacts":"Контакты",	\
+					"price": "650",		\
+					"logo": 0				\
+					}						\
+			}								\
+			';	
+
+var cart = JSON.parse(jsonStation);
+
+
+
+
+
 $(document).ready(function(){
-		$(".checkbox1 :checkbox").click(function() {
-			$(".list-group-item").show();
-			$(".checkbox1  :checkbox:checked").each(function() {
-				$("." + $(this).val()).hide();
-			});	
-		});
+	printAll();
+		
+
+
 });
+
+
+function printAll(){
+	var flag=0;
+	for (var i in cart){
+		flag++;
+		$(".list-group").append($('<a href="station.html" class="list-group-item disapp2" ><div class="row"> <div class="col-md-3"><h4 class="list-group-item-heading">Компания '+flag+'</h4><p class="list-group-item-text">'+cart[i]['name']+'</p></div><div class="col-md-2"><h2 class="list-group-item-heading rating-'+i+'"></h2></div><div class="col-md-3"><p class="list-group-item-text" id="label-'+i+'"></p></div><div class="col-md-2"><p class="list-group-item-text price">'+cart[i]['price']+'</p></div><div class="col-md-2"><p class="list-group-item-text">'+cart[i]['contacts']+'</p></div></div></a>'))
+
+		for (var star = cart[i]['rating']; star >= 1; star--) {
+			$('.rating-'+i).append('*');
+		};	
+		for (var j in cart[i]['bags']){
+			$("#label-"+i).append($('<span class="label label-primary '+cart[i]['bags'][j]['id']+'">'+cart[i]['bags'][j]['name']+'</span> '))
+		}
+		cart[i]['status']='published';
+	}
+
+};
+
+
+
+
+
+
+
 </script>
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
@@ -70,14 +306,14 @@ $(document).ready(function(){
 				  <div class="col-lg-12">
 					<div class="input-group checkbox1">
 					  <span class="input-group-addon">
-						<input type="checkbox" value="disapp1" aria-label="...">
+						<input type="checkbox" class="bags" value="cheep"  id="cheep"aria-label="...">
 					  </span>
 					  <span class="form-control" aria-label="...">Недорого</span>
 					</div><!-- /input-group -->
 					<br>
 					<div class="input-group checkbox1">
 						<span class="input-group-addon">
-						  <input type="checkbox" value="disapp2" aria-label="...">
+						  <input type="checkbox" class="bags" value="disapp2" id="disapp2" aria-label="...">
 						</span>
 					  <span class="form-control" aria-label="...">Качественно</span>
 					</div><!-- /input-group -->
@@ -130,141 +366,13 @@ $(document).ready(function(){
 				  <div class="col-md-3">Название компании</div>
 				  <div class="col-md-2">Рейтинг</div>
 				  <div class="col-md-3">Детали плана</div>
-				  <div class="col-md-2">Цена, грн/кВт</div>
+				  <div class="col-md-2">Цена, грн/мес</div>
 				  <div class="col-md-2">Как связаться</div>
 				</div>
 			</h3>
 		  </div>
 		  <div class="panel-body">
-			<div class="list-group">
-				<a href="station.html" class="list-group-item disapp1" >
-					<div class="row">
-					  <div class="col-md-3">
-					  <h4 class="list-group-item-heading">Компания1</h4>
-					  <p class="list-group-item-text">Название компании</p>
-					  </div>
-					  <div class="col-md-2">
-					  <h2 class="list-group-item-heading">****</h2>
-					  </div>
-					  <div class="col-md-3"><p class="list-group-item-text">
-					  <span class="label label-primary">Primary</span> <span class="label label-success">Success</span> <span class="label label-info">Info</span> <br>
-					  
-					  
-					  </p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">0,55</p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">Как связаться</p></div>
-					</div>
-				</a>
-				<a href="station.html" class="list-group-item " >
-					<div class="row">
-					  <div class="col-md-3">
-					  <h4 class="list-group-item-heading">Компания2</h4>
-					  <p class="list-group-item-text">Название компании</p>
-					  </div>
-					  <div class="col-md-2">
-					  <h2 class="list-group-item-heading">*****</h2>
-					  </div>
-					  <div class="col-md-3"><p class="list-group-item-text">
-					  <span class="label label-primary">Primary</span> <span class="label label-info">Info</span> <br>
-					  
-					  
-					  </p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">0,37</p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">Как связаться</p></div>
-					</div>
-				</a>
-				<a href="station.html" class="list-group-item disapp2" >
-					<div class="row">
-					  <div class="col-md-3">
-					  <h4 class="list-group-item-heading">Компания3</h4>
-					  <p class="list-group-item-text">Название компании</p>
-					  </div>
-					  <div class="col-md-2">
-					  <h2 class="list-group-item-heading">***</h2>
-					  </div>
-					  <div class="col-md-3"><p class="list-group-item-text">
-					  <span class="label label-success">Success</span> 
-					  
-					  
-					  </p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">0,39</p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">Как связаться</p></div>
-					</div>
-				</a>
-				<a href="station.html" class="list-group-item disapp1" >
-					<div class="row">
-					  <div class="col-md-3">
-					  <h4 class="list-group-item-heading">Компания4</h4>
-					  <p class="list-group-item-text">Название компании</p>
-					  </div>
-					  <div class="col-md-2">
-					  <h2 class="list-group-item-heading">*</h2>
-					  </div>
-					  <div class="col-md-3"><p class="list-group-item-text">
-					  <span class="label label-info">Info</span> <br>
-					  
-					  
-					  </p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">0,75</p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">Как связаться</p></div>
-					</div>
-				</a>
-				<a href="station.html" class="list-group-item" >
-					<div class="row">
-					  <div class="col-md-3">
-					  <h4 class="list-group-item-heading">Компания5</h4>
-					  <p class="list-group-item-text">Название компании</p>
-					  </div>
-					  <div class="col-md-2">
-					  <h2 class="list-group-item-heading">*****</h2>
-					  </div>
-					  <div class="col-md-3"><p class="list-group-item-text">
-					  <span class="label label-primary">Primary</span> <span class="label label-success">Success</span>
-					  
-					  
-					  </p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">0,33</p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">Как связаться</p></div>
-					</div>
-				</a>
-				<a href="station.html" class="list-group-item disapp1" >
-					<div class="row">
-					  <div class="col-md-3">
-					  <h4 class="list-group-item-heading">Компания6</h4>
-					  <p class="list-group-item-text">Название компании</p>
-					  </div>
-					  <div class="col-md-2">
-					  <h2 class="list-group-item-heading">**</h2>
-					  </div>
-					  <div class="col-md-3"><p class="list-group-item-text">
-					  <span class="label label-success">Success</span> <span class="label label-info">Info</span> 
-					  
-					  
-					  </p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">0,63</p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">Как связаться</p></div>
-					</div>
-				</a>
-				<a href="station.html" class="list-group-item disapp2" >
-					<div class="row">
-					  <div class="col-md-3">
-					  <h4 class="list-group-item-heading">Компания7</h4>
-					  <p class="list-group-item-text">Название компании</p>
-					  </div>
-					  <div class="col-md-2">
-					  <h2 class="list-group-item-heading">****</h2>
-					  </div>
-					  <div class="col-md-3"><p class="list-group-item-text">
-					  <span class="label label-primary">Primary</span>
-					  
-					  
-					  </p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">0,41</p></div>
-					  <div class="col-md-2"><p class="list-group-item-text">Как связаться</p></div>
-					</div>
-				</a>
-
-				
+			<div class="list-group">				
 			</div>
 		  </div>
 		</div>	

@@ -56,6 +56,28 @@ height: 93.6%;
 	float:left;
 }
 
+.price{
+	font-size: 28px;
+	font-weight: bold;
+	color: #B30202;
+	
+}
+
+.cheep {
+  background-color: #337ab7;
+}
+
+.cheep[href]:hover,
+.cheep[href]:focus {
+  background-color: #286090;
+}
+.label-success {
+  background-color: #5cb85c;
+}
+.label-success[href]:hover,
+.label-success[href]:focus {
+  background-color: #449d44;
+}
 
 #energy{ 
 color:#303f9f;
