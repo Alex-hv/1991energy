@@ -102,3 +102,6 @@ z-index:-5;
 background-image: -webkit-linear-gradient(transparent 10%, #eaeaea 80%);
 box-shadow: 2px 2px 5px grey;
 }
+#bp{
+	left:10px;
+}
