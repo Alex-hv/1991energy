@@ -229,45 +229,7 @@ var cart = JSON.parse(jsonStation);
 
 $(document).ready(function(){
 	printAll();
-		$(".row :checkbox").click(function() {
-			for (var i in cart){
-				cart[i]['print']= "TRUE"
-				cart[i]['status'] = 'n_published'
-			}
-			$(".list-group").html('')
-			
-			$(".row  :checkbox:checked").each(function() {
-			//$("#list-group").html('')
-			//alert('najato')
-
-			filter($(this).val(), this.getAttribute('class'))
-			filterStars($(this).val(), this.getAttribute('class'))
-			
-			
-				for (var i in cart){
-				
-
-				if (cart[i]['print'] == 'TRUE' && cart[i]['status'] == 'n_published' ){
-					
-					//alert('sturayu')
-					//alert(cart[i]['name']+'  '+cart[i]['rating'])
-					//alert(cart[i]['name']+' '+cart[i]['print'])
-					$("#list-group").append($('<a href="station.html" class="list-group-item disapp2" ><div class="row"> <div class="col-md-3"><h4 class="list-group-item-heading">'+i+'</h4><p class="list-group-item-text">'+cart[i]['name']+'</p></div><div class="col-md-2"><h2 class="list-group-item-heading">'+cart[i]['rating']+'</h2></div><div class="col-md-3"><p class="list-group-item-text" id="label-'+i+'"></p></div><div class="col-md-2"><p class="list-group-item-text">Цена</p></div><div class="col-md-2"><p class="list-group-item-text">Как связаться</p></div></div></a>'))
-					for (var j in cart[i]['bags']){
-						
-						$("#label-"+i).append($('<span class="label label-primary">'+cart[i]['bags'][j]['name']+'</span>'))
-					}
-					cart[i]['status']='published';
-					alert(' '+cart[i]['name']+' '+cart[i]['print']+' '+cart[i]['status']);
-					}
-				}
-			
-			
-		});	
-		if ( document.getElementById("cheep").checked == false && document.getElementById("disapp2").checked == false && document.getElementById("rating1").checked == false && document.getElementById("rating2").checked == false && document.getElementById("rating3").checked == false && document.getElementById("rating4").checked == false && document.getElementById("rating5").checked == false){
-			printAll();
-		}
-	});
+		
 
 
 });
@@ -291,55 +253,7 @@ function printAll(){
 };
 
 
-function filter(a, b){
-	if (b == 'bags') {
 
-		for (var i in cart){
-			if (cart[i]['print'] !== 'FALSE'){
-
-					for (var j in cart[i][b]){
-						if ( a == cart[i][b][j]['id']) {
-								var status = "TRUE"
-								break;;
-						};
-						if (a !== cart[i][b][j]['id']) {
-							status = "FALSE"
-						}
-					}	
-			cart[i]['print']=status;
-			if (cart[i]['print'] == "FALSE"){
-
-			}
-			//alert(cart[i]['name']+' '+cart[i]['print'])
-			}		
-		}
-	};
-	
-}
-function filterStars(a, b){
-	if (b == 'rating'){
-		alert('click crabotal');
-		
-		for (var i in cart){
-			if (cart[i]['print'] !== 'FALSE'){
-				
-				if (a == cart[i]['rating']) {
-					status = 'TRUE'
-					continue;
-
-				}
-				else {
-					status = 'FALSE'					
-
-				};
-		}
-		cart[i]['print']=status;
-		key = 0;
-		//alert(' '+cart[i]['name']+' '+cart[i]['print'])
-		}
-	}
-	
-}
 
 
 
@@ -363,7 +277,7 @@ function filterStars(a, b){
       <ul class="nav navbar-nav">
         <li><a href="index.html">Главная</a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Поиск по индексу">
         </div>
@@ -458,11 +372,7 @@ function filterStars(a, b){
 			</h3>
 		  </div>
 		  <div class="panel-body">
-			<div class="list-group">
-				
-				
-
-				
+			<div class="list-group">				
 			</div>
 		  </div>
 		</div>	
@@ -470,7 +380,7 @@ function filterStars(a, b){
 	
 </div>
 
-<img src="img/img_background.png" id="house-on-hills">
+<img src="img/photo1.png" id="house-on-hills">
 </body>
 
 
