@@ -53,3 +53,20 @@ height: 93.6%;
 .float-left{
 	float:left;
 }
+
+
+#energy{ 
+color:#303f9f; 
+} 
+body{ 
+background-color: #a4c2d9; 
+background-image: linear-gradient(transparent 10%,#d2e1ec 80%); 
+
+} 
+#house-on-hills{ 
+margin-top: -120px; 
+width: 100%; 
+position: fixed; 
+bottom: 0; 
+z-index:-5; 
+}
