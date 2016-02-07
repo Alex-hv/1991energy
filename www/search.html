@@ -239,13 +239,13 @@ function printAll(){
 	var flag=0;
 	for (var i in cart){
 		flag++;
-		$(".list-group").append($('<a href="station.html" class="list-group-item disapp2" ><div class="row"> <div class="col-md-3"><h4 class="list-group-item-heading">Компания '+flag+'</h4><p class="list-group-item-text">'+cart[i]['name']+'</p></div><div class="col-md-2"><h2 class="list-group-item-heading rating-'+i+'"></h2></div><div class="col-md-3"><p class="list-group-item-text" id="label-'+i+'"></p></div><div class="col-md-2"><p class="list-group-item-text price">'+cart[i]['price']+'</p></div><div class="col-md-2"><p class="list-group-item-text">'+cart[i]['contacts']+'</p></div></div></a>'))
+		$(".list-group").append($('<a href="station.html" class="list-group-item" ><div class="row"> <div class="col-md-3"><h4 class="list-group-item-heading">Компания '+flag+'</h4><p class="list-group-item-text">'+cart[i]['name']+'</p></div><div class="col-md-2"><h2 class="list-group-item-heading rating-'+i+'"></h2></div><div class="col-md-3"><p class="list-group-item-text" id="label-'+i+'"></p></div><div class="col-md-2"><p class="list-group-item-text price">'+cart[i]['price']+'</p></div><div class="col-md-2"><p class="list-group-item-text">'+cart[i]['contacts']+'</p></div></div></a>'))
 
 		for (var star = cart[i]['rating']; star >= 1; star--) {
 			$('.rating-'+i).append('*');
 		};	
 		for (var j in cart[i]['bags']){
-			$("#label-"+i).append($('<span class="label label-primary '+cart[i]['bags'][j]['id']+'">'+cart[i]['bags'][j]['name']+'</span> '))
+			$("#label-"+i).append($(' <span class="label label-primary '+cart[i]['bags'][j]['id']+'">'+cart[i]['bags'][j]['name']+'</span> '))
 		}
 		cart[i]['status']='published';
 	}

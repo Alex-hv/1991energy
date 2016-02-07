@@ -94,3 +94,11 @@ position: fixed;
 bottom: 0; 
 z-index:-5; 
 }
+
+.disapp2{
+	background:green;
+}
+
+.cheep{
+	margin-right:5px;
+}
